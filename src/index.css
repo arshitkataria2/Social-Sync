@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 7%;
+    --foreground: 210 20% 92%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 220 18% 12%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 190 90% 50%;
+    --primary-foreground: 220 20% 7%;
+
+    --secondary: 220 16% 16%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 220 14% 14%;
+    --muted-foreground: 215 12% 50%;
+
+    --accent: 270 60% 60%;
+    --accent-foreground: 210 20% 95%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --ring: 190 90% 50%;
+
+    --radius: 0.75rem;
+
+    --success: 150 70% 45%;
+    --warning: 40 90% 55%;
+    --online: 150 70% 50%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(190, 90%, 50%), hsl(220, 80%, 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(270, 60%, 60%), hsl(320, 70%, 55%));
+    --gradient-card: linear-gradient(145deg, hsl(220, 18%, 12%), hsl(220, 18%, 8%));
+    --gradient-glow: radial-gradient(ellipse at 50% 0%, hsl(190, 90%, 50%, 0.15) 0%, transparent 60%);
+
+    --shadow-glow: 0 0 20px hsl(190, 90%, 50%, 0.2);
+    --shadow-card: 0 4px 24px hsl(0, 0%, 0%, 0.4);
+    --shadow-elevated: 0 8px 32px hsl(0, 0%, 0%, 0.6);
+
+    --sidebar-background: 220 18% 8%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 190 90% 50%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 16% 14%;
+    --sidebar-accent-foreground: 210 20% 85%;
+    --sidebar-border: 220 14% 16%;
+    --sidebar-ring: 190 90% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
+  }
+
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 20px hsl(190, 90%, 50%, 0.5);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px hsl(190, 90%, 50%, 0.2); }
+  50% { box-shadow: 0 0 40px hsl(190, 90%, 50%, 0.4); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(220, 18%, 8%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(220, 14%, 22%);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(190, 90%, 50%, 0.5);
+}
