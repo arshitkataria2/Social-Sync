@@ -39,7 +39,7 @@
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/socialysync.git
+git clone https://github.com/arshitkataria2/socialysync.git
 ```
 
 ### 2️⃣ Open Project Folder
